@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddik5v0fbssms"]
+
+[ext_resource type="Script" path="res://demo/Demo.cs" id="1_o8cfi"]
+
+[node name="Node" type="Node"]
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 31.0
+offset_top = 141.0
+offset_right = 508.0
+offset_bottom = 389.0
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_o8cfi")
+
+[node name="Button" type="Button" parent="Node2D"]
+offset_right = 334.0
+offset_bottom = 72.0
+text = "press me"
