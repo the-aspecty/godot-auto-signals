@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cinib2ww6vrg2"]
+
+[ext_resource type="Script" uid="uid://cjhkc6lbuc1w8" path="res://demo/BlockDemo.cs" id="1_1h5k4"]
+
+[node name="BlockDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1h5k4")

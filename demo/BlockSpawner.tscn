@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi5e2fnkj5ooh"]
+
+[ext_resource type="Script" uid="uid://iocenewnm031" path="res://demo/BlockSpawner.cs" id="1_2x8j5"]
+
+[node name="BlockSpawner" type="Node2D"]
+script = ExtResource("1_2x8j5")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
