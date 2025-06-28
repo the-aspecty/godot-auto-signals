@@ -1,19 +1,80 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddik5v0fbssms"]
 
-[ext_resource type="Script" path="res://demo/Demo.cs" id="1_o8cfi"]
+[ext_resource type="Script" uid="uid://bqbqqfkp6bmgt" path="res://demo/Demo.cs" id="1_o8cfi"]
 
-[node name="Node" type="Node"]
-
-[node name="LineEdit" type="LineEdit" parent="."]
-offset_left = 31.0
-offset_top = 141.0
-offset_right = 508.0
-offset_bottom = 389.0
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Demo" type="Node2D"]
 script = ExtResource("1_o8cfi")
 
-[node name="Button" type="Button" parent="Node2D"]
-offset_right = 334.0
-offset_bottom = 72.0
-text = "press me"
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="VBox" type="VBoxContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="TitleLabel" type="Label" parent="UI/VBox"]
+layout_mode = 2
+text = "Auto Signals Demo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="UI/VBox"]
+layout_mode = 2
+text = "Initializing..."
+horizontal_alignment = 1
+
+[node name="ConnectionCountLabel" type="Label" parent="UI/VBox"]
+layout_mode = 2
+text = "Tracked Nodes: 0"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/VBox"]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="UI/VBox"]
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="UI/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test Button"
+
+[node name="OneTimeButton" type="Button" parent="UI/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "One-Time Button"
+
+[node name="TextInput" type="LineEdit" parent="UI/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type here and press Enter..."
+
+[node name="HSeparator2" type="HSeparator" parent="UI/VBox"]
+layout_mode = 2
+
+[node name="LogLabel" type="Label" parent="UI/VBox"]
+layout_mode = 2
+text = "Event Log:"
+
+[node name="LogOutput" type="RichTextLabel" parent="UI/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Loading..."
+scroll_following = true
+
+[node name="UpdateTimer" type="Timer" parent="UI"]
+autostart = true
+
+[node name="NotificationContainer" type="VBoxContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 400.0
