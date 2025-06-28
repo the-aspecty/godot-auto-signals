@@ -1,18 +1,34 @@
 #if TOOLS
 using Godot;
-using System;
 
 [Tool]
-public partial class AutoSignals : EditorPlugin
+public partial class AutoSignalsPlugin : EditorPlugin
 {
-    public override void _EnterTree()
+    private const string AutoloadName = "AutoSignalProcessor";
+
+    public override void _EnablePlugin()
     {
-        // Initialization of the plugin goes here.
+        GD.Print("[AutoSignals] Plugin enabling...");
+
+        // Register the AutoSignalProcessor as an autoload singleton
+        AddAutoloadSingleton(
+            AutoloadName,
+            "res://addons/auto_signals/Scripts/Core/AutoSignalProcessor.cs"
+        );
+
+        GD.Print(
+            "[AutoSignals] Plugin enabled successfully - AutoSignalProcessor registered as autoload"
+        );
     }
 
-    public override void _ExitTree()
+    public override void _DisablePlugin()
     {
-        // Clean-up of the plugin goes here.
+        GD.Print("[AutoSignals] Plugin disabling...");
+
+        // Remove the autoload singleton
+        RemoveAutoloadSingleton(AutoloadName);
+
+        GD.Print("[AutoSignals] Plugin disabled - AutoSignalProcessor autoload removed");
     }
 }
 #endif
